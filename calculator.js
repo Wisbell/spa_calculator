@@ -39,6 +39,21 @@
     console.log("Add button clicked")
   })
 
+  document.querySelector('.subtract').addEventListener('click', function(event){
+    event.preventDefault()
+    console.log("Subtract button clicked")
+  })
+
+  document.querySelector('.multiply').addEventListener('click', function(event){
+    event.preventDefault()
+    console.log("Multiply button clicked")
+  })
+
+  document.querySelector('.divide').addEventListener('click', function(event){
+    event.preventDefault()
+    console.log("Divide button clicked")
+  })
+
  }
 
  applyEventListeners()

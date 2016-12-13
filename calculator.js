@@ -50,10 +50,20 @@ function divide(number1, number2){
 
 
 function performOperation(number1, number2, operation) {
-  console.log("number1", number1)
-  console.log("number1", number2)
-  console.log("operation", operation)
-  return `${operation}(${number1}, ${number2})`
+  if (operation === "add") {
+    return add(number1, number2)
+  } else if (operation === "subtract") {
+      return subtract(number1, number2)
+  } else if (operation === "multiply") {
+      return multiply(number1, number2)
+  } else if (operation === "divide") {
+      return divide(number1, number2)
+  }
+}
+
+
+function applyAnswertoDOM() {
+  document.querySelector('')
 }
 
 
@@ -72,8 +82,8 @@ function applyEventListeners() {
       event.preventDefault()
 
       // Get numbers
-      number1 = document.querySelector('input[name=number1]')
-      number2 = document.querySelector('input[name=number2]')
+      number1 = parseInt(document.querySelector('input[name="number1"]').value)
+      number2 = parseInt(document.querySelector('input[name="number2"]').value)
 
       // Get operation
       operation = event.target.classList[0]
@@ -81,32 +91,8 @@ function applyEventListeners() {
       console.log(performOperation(number1, number2, operation))
       performOperation(number1, number2, operation)
 
-
-
-
     })
   }
-
-  // document.querySelector('.add').addEventListener('click', function(event){
-  //   event.preventDefault()
-  //   console.log("Add button clicked")
-  // })
-
-  // document.querySelector('.subtract').addEventListener('click', function(event){
-  //   event.preventDefault()
-  //   console.log("Subtract button clicked")
-  // })
-
-  // document.querySelector('.multiply').addEventListener('click', function(event){
-  //   event.preventDefault()
-  //   console.log("Multiply button clicked")
-  // })
-
-  // document.querySelector('.divide').addEventListener('click', function(event){
-  //   event.preventDefault()
-  //   console.log("Divide button clicked")
-  // })
-
  }
 
  applyEventListeners()

@@ -62,8 +62,8 @@ function performOperation(number1, number2, operation) {
 }
 
 
-function applyAnswertoDOM() {
-  document.querySelector('')
+function showAnswer(answer) {
+  document.querySelector('.showAnswer').innerHTML = `<h1>Answer: ${answer}</h1> `;
 }
 
 
@@ -88,8 +88,9 @@ function applyEventListeners() {
       // Get operation
       operation = event.target.classList[0]
 
+      // Show the answer on the page
       console.log(performOperation(number1, number2, operation))
-      performOperation(number1, number2, operation)
+      showAnswer(performOperation(number1, number2, operation))
 
     })
   }
